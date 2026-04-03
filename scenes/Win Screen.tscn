@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cdgiai3gc3fpp"]
+
+[ext_resource type="Texture2D" uid="uid://cxkmwk6kovf3" path="res://assets/Keanu.png" id="1_imebk"]
+[ext_resource type="Script" uid="uid://b1ww1ljm2w6ov" path="res://scenes/play_again.gd" id="2_xcy6l"]
+
+[node name="Win Screen" type="CanvasLayer" unique_id=1734158186]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1515820086]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_imebk")
+
+[node name="LinkButton" type="LinkButton" parent="TextureRect" unique_id=1887576668]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 372.0
+offset_right = 629.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 50
+text = "Main Lagi"
+underline = 2
+script = ExtResource("2_xcy6l")
+scene_to_load = "Level 1"
+
+[connection signal="pressed" from="TextureRect/LinkButton" to="TextureRect/LinkButton" method="_on_Select_Level_1_pressed"]

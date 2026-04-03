@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dagebxnm1sl4h"]
+
+[ext_resource type="Script" uid="uid://dtf62uaoxvsqe" path="res://scenes/InteractKey.gd" id="1_3fm8f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pkyoy"]
+size = Vector3(1.1445313, 0.5206299, 1.8310547)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkyoy"]
+albedo_color = Color(1, 0.8466836, 0, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fm8f"]
+albedo_color = Color(1, 0.84705883, 0, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uehbh"]
+albedo_color = Color(1, 0.84705883, 0, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a8gn"]
+albedo_color = Color(1, 0.84705883, 0, 1)
+metallic = 1.0
+
+[node name="ObjKey" type="Node3D" unique_id=1251784891]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=962989381]
+script = ExtResource("1_3fm8f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=364686675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.072265625, -0.23968506, -0.47680664)
+shape = SubResource("BoxShape3D_pkyoy")
+
+[node name="key" type="CSGCombiner3D" parent="StaticBody3D" unique_id=1317230512]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="StaticBody3D/key" unique_id=1456773144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001286149, 0.0047914386, 0)
+radius = 0.24658203
+height = 0.1
+sides = 32
+material = SubResource("StandardMaterial3D_pkyoy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D/key" unique_id=1356729917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026960552, -0.0018811226, -0.6418965)
+size = Vector3(0.09234619, 0.037597656, 0.9448242)
+material = SubResource("StandardMaterial3D_3fm8f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D/key" unique_id=1372577881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12277049, -0.0018811226, -1.0382588)
+size = Vector3(0.28396606, 0.037597656, 0.15209961)
+material = SubResource("StandardMaterial3D_uehbh")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="StaticBody3D/key" unique_id=1924731454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12277049, -0.0018811226, -0.861974)
+size = Vector3(0.28396606, 0.037597656, 0.15209961)
+material = SubResource("StandardMaterial3D_1a8gn")

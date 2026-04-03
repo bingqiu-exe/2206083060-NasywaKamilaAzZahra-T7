@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://30latlwbnave"]
+
+[ext_resource type="Script" uid="uid://d13urr7cxsil2" path="res://scenes/area_trigger.gd" id="1_s17mg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s17mg"]
+size = Vector3(11.62384, 5.0809326, 8.780975)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7klvq"]
+
+[node name="Area Trigger" type="Area3D" unique_id=1094857982]
+script = ExtResource("1_s17mg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=636618827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52542114, 2.0404663, 0.8013458)
+shape = SubResource("BoxShape3D_s17mg")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1506758684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12792969, 0.12188721, 0.21105957)
+use_collision = true
+mesh = SubResource("BoxMesh_7klvq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

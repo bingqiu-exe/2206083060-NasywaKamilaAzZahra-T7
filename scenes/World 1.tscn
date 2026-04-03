@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dltqory4o1xju"]
+
+[ext_resource type="PackedScene" uid="uid://doltqdncnrcbx" path="res://scenes/ObjLamp.tscn" id="1_cb4d4"]
+[ext_resource type="PackedScene" uid="uid://dagebxnm1sl4h" path="res://scenes/ObjKey.tscn" id="2_8x8vc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cb4d4"]
+albedo_color = Color(1, 1, 0.56078434, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8x8vc"]
+albedo_color = Color(1, 0.5568628, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg70b"]
+albedo_color = Color(1, 1, 0.56078434, 1)
+
+[node name="World 1" type="Node3D" unique_id=1914051016]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1106000893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.534912)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 110.09782
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1995815893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.138672)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 116.8999
+
+[node name="ObjLamp" parent="." unique_id=416303997 instance=ExtResource("1_cb4d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2454834, -4.622986, 12.911255)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2032705098]
+use_collision = true
+
+[node name="Room 1" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1713905117]
+use_collision = true
+flip_faces = true
+size = Vector3(15, 10, 55)
+material = SubResource("StandardMaterial3D_cb4d4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1459212022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013836861, -4.977867, 1.2313995)
+flip_faces = true
+size = Vector3(14.927275, 13.290451, 11.18631)
+material = SubResource("StandardMaterial3D_8x8vc")
+
+[node name="ObjLamp2" parent="." unique_id=2097235409 instance=ExtResource("1_cb4d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.428711, -4.740967, 13.067383)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=1596725966]
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=966432231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1519547, -0.09075928, -19.439117)
+size = Vector3(10.588242, 10.152466, 2.2147827)
+material = SubResource("StandardMaterial3D_yg70b")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=829202491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -4.5, 5.57959)
+size = Vector3(2.0263672, 0.46435547, 1.5117188)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=2140887036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -4.5, -1.9686279)
+size = Vector3(2.0263672, 0.46435547, 1.5117188)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=696244003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -4.5, 1.7285767)
+size = Vector3(2.0263672, 0.46435547, 2.973755)
+
+[node name="ObjKey" parent="." unique_id=1251784891 instance=ExtResource("2_8x8vc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4227295, -4.5009766, -11.05249)
+
+[node name="ObjLamp3" parent="." unique_id=2126025742 instance=ExtResource("1_cb4d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6289063, -4.385681, -24.138794)

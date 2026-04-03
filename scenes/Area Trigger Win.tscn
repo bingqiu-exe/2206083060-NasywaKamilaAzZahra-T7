@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://tj2k1otmhmxo"]
+
+[ext_resource type="Script" uid="uid://pxuhy4twhtdw" path="res://scenes/area_trigger_win.gd" id="1_fnsu3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwjsk"]
+size = Vector3(7, 4.0284424, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fnsu3"]
+
+[node name="Area Trigger Win" type="Area3D" unique_id=1566432524]
+script = ExtResource("1_fnsu3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1986648924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057168007, 1.4058671, -0.14822054)
+shape = SubResource("BoxShape3D_kwjsk")
+debug_color = Color(0.9424826, 6.930828e-06, 0.60815644, 0.41960785)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=2017149990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0070507526, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_fnsu3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
